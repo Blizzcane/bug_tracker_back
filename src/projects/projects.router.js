@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const controller = require("./counts.controller");
+const controller = require("./projects.controller");
 const methodNotAllowed = require("../errors/methodNotAllowed");
 
 

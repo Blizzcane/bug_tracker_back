@@ -1,12 +1,12 @@
 const projectsService = require("./projects.service");
 const asyncErrorBoundary = require("../errors/asyncErrorBoundary");
 
+async function list(req, res) {
 
-function list(req, res) {
-    res.json({ data: projects });
-  }
-
+  const projects = await projectsService.list();
+  res.json({ data: projects });
+}
 
 module.exports = {
-    list
-  };
+  list,
+};
