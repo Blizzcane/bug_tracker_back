@@ -1,7 +1,11 @@
 const express = require("express");
 const app = express();
 
+const projectsRouter = require("./projects/projects.router.js")
+
 app.use(express.json());
+
+app.use("/projects", projectsRouter);
 
 // Not found handler
 app.use((req, res, next) => {
