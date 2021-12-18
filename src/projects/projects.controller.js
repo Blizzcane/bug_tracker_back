@@ -2,6 +2,7 @@ const service = require("./projects.service");
 const asyncErrorBoundary = require("../errors/asyncErrorBoundary");
 
 async function list(req, res) {
+  console.log("list");
   const projects = await service.list();
   res.json({ data: projects });
 }
@@ -24,6 +25,6 @@ async function create(req, res) {
 }
 
 module.exports = {
-  list,
-  create,
+  list: [asyncErrorBoundary(list)],
+  create: [validateBody, create],
 };
