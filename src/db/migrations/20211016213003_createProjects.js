@@ -11,13 +11,12 @@ exports.up = function (knex) {
       .inTable("users")
       .onDelete("SET NULL");
     table.string("members");
-      table
-        .foreign("members")
-        .references("user_id")
-        .inTable("users")
-        .onDelete("SET NULL");
+    table
+      .foreign("members")
+      .references("user_id")
+      .inTable("users")
+      .onDelete("SET NULL");
   });
-  
 };
 
 exports.down = function (knex) {
