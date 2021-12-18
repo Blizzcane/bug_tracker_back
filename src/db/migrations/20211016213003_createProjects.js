@@ -4,18 +4,12 @@ exports.up = function (knex) {
     table.string("project_name");
     table.timestamp("created_at");
     table.timestamp("updated_at");
-    table.integer("createdById");
-    table
-      .foreign("createdById")
-      .references("user_id")
-      .inTable("users")
-      .onDelete("SET NULL");
-    table.string("members");
+    table.integer("members");
     table
       .foreign("members")
       .references("user_id")
       .inTable("users")
-      .onDelete("SET NULL");
+      .onDelete("SET NULL"); 
   });
 };
 
