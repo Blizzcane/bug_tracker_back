@@ -3,7 +3,7 @@ const asyncErrorBoundary = require("../errors/asyncErrorBoundary");
 
 async function list(req, res) {
   console.log("list");
-  const projects = await service.list();
+  const projects = await service.list(); // this should be working, error might be with the PORT
   res.json({ data: projects });
 }
 
